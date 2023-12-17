@@ -19,8 +19,6 @@ for (const select of dropdowns) {
 	}
 	select.addEventListener("change", (event) => {
 		updateFlag(event.target);
-		let value = select.options[select.selectedIndex].value;
-  console.log(value)
 	})
 }
 
