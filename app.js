@@ -38,13 +38,14 @@ const updateExchangeRate = async() =>{
 		amtVal = 1
 		amount.value = "1"
 	}
-	let URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`
+	let URL = `${BASE_URL}/${fromCurr.value}&symbols=${toCurr.value}`
 	let response  = await fetch(URL);
 	let data = await response.json();
-	let rate  = data[toCurr.value.toLowerCase()];
-
-	let finalAmount = amtVal * rate;
-	msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+	// let rate  = data[toCurr.value.toLowerCase()];
+   const convertedAmount = (amount * data.rates[toCurr.value]).toFixed(2);
+	alert(`${amtVal} ${fromCurr.value} = ${convertedAmount} ${to.value}`);
+	// let finalAmount = amtVal * rate;
+	// msg.innerText = `${amtVal} ${fromCurr.value} = ${convertedAmount} ${to.value}`;
 }
 
 window.addEventListener('load', ()=>{
