@@ -1,4 +1,4 @@
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const BASE_URL = "https://api.frankfurter.dev/v1/latest?base";
 
 const dropdowns = document.querySelectorAll('.dropdown select');
 const button = document.querySelector('.btn');
